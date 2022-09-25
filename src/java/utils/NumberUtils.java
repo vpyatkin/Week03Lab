@@ -11,14 +11,14 @@ package utils;
  */
 public class NumberUtils {
     public static boolean isNumber(String test) {
-        int number;
+        double number;
 
         if(test == null || test.equals("")) {
             return false;
         }
 
         try {
-            number = Integer.parseInt(test);
+            number = Double.parseDouble(test);
             return true;
         } catch (NumberFormatException e) {
             return false;
