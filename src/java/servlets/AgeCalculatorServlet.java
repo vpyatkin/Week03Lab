@@ -52,12 +52,12 @@ public class AgeCalculatorServlet extends HttpServlet {
             getServletContext().getRequestDispatcher("/WEB-INF/agecalculator.jsp").forward(request, response);
             return;
         }
-        if (NumberUtils.isNumber(age) == false || Integer.parseInt(age) < 0) {
+        if (NumberUtils.isNumber(age) == false || Double.parseDouble(age) < 0) {
             request.setAttribute("message", "You must enter a number <br>");
             getServletContext().getRequestDispatcher("/WEB-INF/agecalculator.jsp").forward(request, response);
             return;
         }
-        request.setAttribute("message", "Your age next birthday will be " + (Integer.parseInt(age) + 1) + " <br>");
+        request.setAttribute("message", "Your age next birthday will be " + ((int)Double.parseDouble(age) + 1) + " <br>");
             getServletContext().getRequestDispatcher("/WEB-INF/agecalculator.jsp").forward(request, response);
     }
 
