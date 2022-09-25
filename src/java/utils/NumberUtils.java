@@ -5,20 +5,22 @@
  */
 package utils;
 
+import java.math.BigDecimal;
+
 /**
  *
  * @author Vladik
  */
 public class NumberUtils {
     public static boolean isNumber(String test) {
-        double number;
+        BigDecimal number;
 
         if(test == null || test.equals("")) {
             return false;
         }
 
         try {
-            number = Double.parseDouble(test);
+            number = new BigDecimal(test);;
             return true;
         } catch (NumberFormatException e) {
             return false;
